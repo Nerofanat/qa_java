@@ -6,27 +6,19 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Objects;
-
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionTestParametrized {
-    Lion lion;
-    String sex;
-    Feline feline;
-    Boolean hasMane;
-    Boolean expectException; //Ожидаем ли мы исключение в тесте
+    private Lion lion;
+    private String sex;
+    private Feline feline;
+    private final Boolean hasMane;
+    private final Boolean expectException; //Ожидаем ли мы исключение в тесте
 
     @Before
     public void setUp() {
@@ -36,9 +28,9 @@ public class LionTestParametrized {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {"Самец", true, true},
-                {"Самка", false, true},
-                {"Сумка", false, false},
+                {"Самец", true, false},
+                {"Самка", false, false},
+                {"Сумка", false, true},
         });
 
     }

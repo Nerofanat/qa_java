@@ -13,8 +13,8 @@ import org.mockito.Mockito;
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
 
-    String MAN = "Самец";
-    Lion lion;
+    private  static final String MAN = "Самец";
+    private Lion lion;
 
     @Mock
     Feline feline;

@@ -12,7 +12,7 @@ public class Lion {
     public Lion (String sex, Feline feline) throws Exception {
         this.feline = feline;
         //Наверное вот эту развилку надо проерить как раз параметризированным тестом
-        //Возможно стоит создать параметризированный вариант создания конструкторов объекта
+        //Проверяем параметризацией
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -23,12 +23,13 @@ public class Lion {
     }
 
     // Вызов этого метода Lion.getKittens() должен вызвать метод feline.getKittens() (там можно вызвать этот метод с аргументами  так что надо понять или тут это проверить или в классе feline)
-    //
+
     public int getKittens() {
         return feline.getKittens();
     }
 
-    // (Ведет себя по мужски?) вызов этого метода возвращает true/ false в зависимости от того что передали в конструктор
+    // (Грива?) вызов этого метода возвращает true/ false в зависимости от того какой пол передали в конструктор
+    //Пооверяем параметризщацией
     public boolean doesHaveMane() {
         return hasMane;
     }
